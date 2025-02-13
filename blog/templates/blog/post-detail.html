@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+ 
+{% load static %}
+
+{% block title %} 
+Post name
+{% endblock %} 
+
+{% block css_files %}
+
+  <link rel="stylesheet" href="{% static "blog/post-detail.css" %}" />
+{% endblock %}
+
+
+{% block content %}
+ 
+<section id='summary'>
+    <h2> {{one_post.title}}</h2>
+    <article>
+        <img src= {% static 'blog/images/' | add: one_post.image %}alt="one_post.title">
+
+
+        
+        
+        <address> By {{one_post.title}}</address>
+
+
+        <div> 
+            last updated on <time > {{one_post.date | date:"d M Y"}} </time>
+        </div>
+    </article>    
+</section>
+
+<main>
+ 
+    {{one_post.content}}
+    {% comment "" %}
+    <p>
+        orem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend nisl ligula, sodales malesuada leo luctus a. Morbi et tellus nec lacus vehicula efficitur id et lorem. Nam porta, sapien at ullamcorper tempus, risus ex iaculis lectus, vel porttitor nulla diam id massa. Praesent vel erat nulla. Maecenas at felis mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse vel rutrum arcu. Quisque ultrices diam rutrum dui ultrices, sed scelerisque orci vestibulum. Proin nec maximus lectus.
+
+        Cras justo elit, auctor vitae aliquam quis, pellentesque eu nunc. Nunc ex mauris, elementum eu tempus at, dapibus at urna. Aliquam lorem magna, pulvinar at convallis id, dictum non ante. Ut eu magna sit amet tellus auctor ornare. Nam ac sodales tellus. Aenean elit nunc, facilisis eu lobortis a, pretium commodo mi. Phasellus aliquam felis id nibh mattis laoreet. Curabitur eget dignissim massa. Integer ut augue ut nisl viverra rhoncus. Mauris et condimentum neque. Aliquam pretium porta euismod. Sed sit amet velit sed velit imperdiet vulputate. Donec maximus ante et felis elementum dignissim. Vivamus eleifend sapien vel gravida pulvinar. Aenean quis tellus arcu. Aliquam cursus ultricies dui.
+   </p>
+
+    <p>
+        Vestibulum aliquet quam risus, vitae consequat libero tristique vitae. In hac habitasse platea dictumst. Suspendisse potenti. Sed fringilla ullamcorper massa, dignissim lacinia metus commodo sit amet. Nulla varius arcu ex. Nam quis magna et arcu pellentesque ultricies. Maecenas aliquet ut ex a mollis. Donec fringilla ac diam quis rutrum. Nulla et dolor non eros condimentum posuere a in sem. Morbi egestas aliquam lacus nec hendrerit. Cras feugiat lobortis nisl non dapibus. Duis suscipit fermentum urna, et porta velit fringilla quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur porttitor scelerisque sapien. Morbi dictum sapien et euismod consequat.
+        
+        In ultrices enim at elit efficitur, ut posuere lorem tempor. Suspendisse mollis ornare finibus. Nullam ultrices iaculis lacus, id efficitur arcu facilisis sit amet. Aliquam eu porttitor nisi. Aenean id malesuada metus. Integer libero diam, placerat ac leo vel, cursus bibendum felis. Nulla nec est vestibulum, rutrum ligula vel, dapibus quam. Cras placerat nunc et mi faucibus euismod. Pellentesque mollis porttitor nulla. Cras justo velit, molestie ac leo in, varius ultrices orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras placerat molestie nibh ut euismod.
+        
+        Duis ac luctus neque. Nam pulvinar eros ut purus lacinia molestie. Pellentesque mollis blandit elit nec facilisis. Nunc molestie est libero, sed porttitor dolor malesuada quis. Vivamus nisl ex, congue maximus cursus feugiat, fermentum ut urna. Integer posuere lectus sit amet venenatis egestas. Phasellus aliquet mollis sapien, vel tempus purus. In venenatis nisl accumsan, fermentum nibh porta, interdum velit. Cras eu pulvinar enim, id accumsan nisl. Fusce in placerat lorem. Integer iaculis id libero quis consequat. Duis pellentesque tristique dolor in ullamcorper. Sed vel molestie eros.
+    </p>
+    {% endcomment %}
+
+<main>
+
+{% endblock %}

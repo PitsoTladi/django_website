@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %} 
+Posts list
+{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/app.css' %}" />
+<link rel="stylesheet" href="{% static "blog/index.css" %}" />
+  
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <ul>
+    <li>
+      <article class="post">
+           <a href="{% url 'onePost' post.slug %}">
+           <img src="{% static 'blog/images/' %}{{ post.image }}" alt="{{ post.title }}">
+
+          
+          <div class="post__content">
+            <h3>{{post.title}} </h3>
+            <p>
+              {% comment %}|add:post.image  UFC 311 was more than combat; it was a meditation on struggle and triumph. Islam Makhachev defended his title with a first-round submission,
+               proving his mastery once more...<!--Merab Dvalishvili outlasted Umar Nurmagomedov, etching his name deeper into the anals of  bantamweight history. 
+               Jiri Prochazka, fueled by a fevered binge of martial arts films, dismantled Jamahal Hill in a cinematic display of technique and heart.
+               Each bout was a verse in the poetry of human resilience—a reminder that beyond the blood and sweat, the octagon is where warriors seek not just victory,
+                but transcendence.--> 
+               {% endcomment %}
+                {{post.excerpt}}
+            </p>
+          </div>
+        </a>                                                                                                                                                                                                                                                                          
+      </article>
+    </li>
+  </ul>
+{% endblock %}
+
+
